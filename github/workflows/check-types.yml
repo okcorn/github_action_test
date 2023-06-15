@@ -1,13 +1,21 @@
-name: Check types
-on: pull_request
+name: PR Checks
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
 
 jobs:
-  check-types:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Run type check lines
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Run type check
         run: yarn tsc --noEmit
