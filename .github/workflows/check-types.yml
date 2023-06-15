@@ -16,7 +16,3 @@ jobs:
 
       - name: Run type check
         run: yarn tsc --noEmit
-        if: ${{ failure() }}
-        run: echo "::error::Type checking failed. See the error details above."
-
-      # - name: Check for type errors
