@@ -16,8 +16,6 @@ jobs:
 
       - name: Run type check
         run: yarn tsc --noEmit
-        env:
-          CI: true
 
       - name: Check for type errors
         if: ${{ failure() }}
