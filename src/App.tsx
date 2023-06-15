@@ -5,7 +5,7 @@ export const App = () => {
   return (
     <>
       <h1>Hello world! I am using React</h1>
-      <Button text={1} />
+      <Button text={12341234} />
     </>
   );
 };
