@@ -14,20 +14,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Use Node.js 18
+      - name: Use Node.js 16
         uses: actions/setup-node@v3
         with:
-          node-version: 18
-          architecture: x64
-          cache: yarn
+          node-version: 16
 
       - name: Install dependencies
         run: yarn
 
       - name: Run type check
-        continue-on-error: true
         run: yarn tsc --noEmit
-
-      - name: Display type check errors
-        if: ${{ failure() }}
-        run: echo "::error::Type checking failed. Please fix the errors."
