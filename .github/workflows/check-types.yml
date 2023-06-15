@@ -14,13 +14,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - name: Use Node.js 18
+        uses: actions/setup-node@v3
         with:
-          node-version: 14
+          node-version: 18
+          architecture: x64
+          cache: yarn
 
       - name: Install dependencies
-        run: yarn install
+        run: yarn
 
       - name: Run type check
         run: yarn tsc --noEmit
