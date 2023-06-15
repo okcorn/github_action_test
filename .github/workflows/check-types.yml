@@ -25,8 +25,8 @@ jobs:
         run: yarn
 
       - name: Run type check
-        run: yarn tsc --noEmit
         continue-on-error: true
+        run: yarn tsc --noEmit
 
       - name: Display type check errors
         if: ${{ failure() }}
