@@ -1,0 +1,19 @@
+{
+  "ts-node": {
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  },
+  "compilerOptions": {
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "rootDir": ".",
+    "allowJs": true,
+    "noEmit": true,
+    "isolatedModules": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true
+  },
+  "exclude": ["node_modules", "dist", "stories", ".storybook", "__test__"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+}
